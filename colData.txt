@@ -1,0 +1,11 @@
+	treatment	type
+HS03	Heat	paired-end
+HS06	Heat	paired-end
+HS08	Control	paired-end
+HS09	Heat	paired-end
+HS12	Heat	paired-end
+HS15 	Heat	paired-end
+HS23	Control	paired-end
+HS26	Control	paired-end
+HS29	Control	paired-end
+HS32	Control	paired-end
