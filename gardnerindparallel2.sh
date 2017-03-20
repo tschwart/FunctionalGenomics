@@ -63,9 +63,6 @@ find . -size 0 -delete
 
 
 ###############  Using samtools to process the bam Input: HS06_GATCAG_All.sam
-#  Make the list of prefixes for all the .sam files we want to process with Samtools
-ls | grep "trimmed.fastq.gz" |cut -d "_" -f 1,2 | sort | uniq  > list7
-
 # Use a loop to process through the names in the list using samtools
 while read i;
 do
@@ -78,7 +75,7 @@ samtools index  ${i}_sorted.bam
         ## Tally counts of reads mapped to each transcript; and calcuate the stats.
 samtools idxstats   ${i}_sorted.bam     >	${i}_Counts.txt
 samtools flagstat	${i}_sorted.bam         >	${i}_Stats.txt
-done<list7
+done<list6
 
 #again, remove any empty files
 
@@ -98,7 +95,7 @@ samtools index  ${i}_in_sorted.bam
         ## Tally counts of reads mapped to each transcript; and calcuate the stats.
 samtools idxstats   ${i}_in_sorted.bam     >       ${i}_in_Counts.txt
 samtools flagstat       ${i}_in_sorted.bam         >       ${i}_in_Stats.txt
-done<list7
+done<list6
 
 #again, remove any empty files
 
